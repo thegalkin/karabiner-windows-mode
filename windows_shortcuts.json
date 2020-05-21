@@ -108,16 +108,16 @@
       ]
     },
     {
-      "description": "Alt-Tab between windows",
+      "description": "Alt+Tab between windows",
       "manipulators": [
         {
           "from": {
-            "key_code": "tab",
+            "key_code":  "tab",
             "modifiers": {"mandatory": ["left_alt"], "optional": ["any"]}
           },
           "to": [{
-              "key_code": "command",
-              "modifiers": ["tab"]
+              "key_code": "tab",
+              "modifiers": ["command"]
           }],
           "conditions": [
             {
@@ -313,6 +313,34 @@
           },
           "to": [{
             "key_code": "right_arrow",
+            "modifiers": ["command", "shift"]
+          }],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyper$",
+                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Look up middle-mouse",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "button3",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [{
+            "key_code": "x",
             "modifiers": ["command", "shift"]
           }],
           "conditions": [
@@ -1257,8 +1285,32 @@
             "modifiers": { "optional": ["any"] }
           },
           "to": [{
-              "key_code": "q",
-              "modifiers": ["command"]
+            "shell_command" : "open /System/Applications/Calculator.app"
+          }],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "F2 to rename",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "f2",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [{
+              "key_code": "return_or_enter",
+              "modifiers": { "optional": ["any"] }
           }],
           "conditions": [
             {
@@ -1282,7 +1334,8 @@
             "modifiers": { "mandatory": ["control"], "optional": ["any"] }
           },
           "to": [{
-              "shell_command" : "open /System/Applications/Calculator.app"
+              "key_code": "q",
+              "modifiers": ["command"]
           }],
           "conditions": [
             {
