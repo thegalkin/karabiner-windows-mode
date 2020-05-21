@@ -108,6 +108,34 @@
       ]
     },
     {
+      "description": "Atl-Tab between windows",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "Alt",
+            "modifiers": {"mandatory": ["tab"], "optional": ["any"]}
+          },
+          "to": [{
+              "key_code": "command",
+              "modifiers": ["tab"]
+          }],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyper$",
+                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
       "description": "Home",
       "manipulators": [
         {
