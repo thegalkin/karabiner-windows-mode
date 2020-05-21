@@ -1337,7 +1337,7 @@
             "modifiers": { "optional": ["any"] }
           },
           "to": [{
-              "key_code": "return_or_enter",
+              "key_code": "keypad_enter",
               "modifiers": { "optional": ["any"] }
           }],
           "conditions": [
