@@ -112,8 +112,8 @@
       "manipulators": [
         {
           "from": {
-            "key_code": "left_alt",
-            "modifiers": {"mandatory": ["tab"], "optional": ["any"]}
+            "key_code": "tab",
+            "modifiers": {"mandatory": ["left_alt"], "optional": ["any"]}
           },
           "to": [{
               "key_code": "command",
@@ -1249,6 +1249,31 @@
       ]
     },
     {
+      "description": "F12 to calc",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "f12",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to": [{
+              "key_code": "q",
+              "modifiers": ["command"]
+          }],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
       "description": "F4 (Ctrl) [Only Chrome]",
       "manipulators": [
         {
@@ -1257,8 +1282,7 @@
             "modifiers": { "mandatory": ["control"], "optional": ["any"] }
           },
           "to": [{
-              "key_code": "w",
-              "modifiers": ["command"]
+              "shell_command" : "open /System/Applications/Calculator.app"
           }],
           "conditions": [
             {
