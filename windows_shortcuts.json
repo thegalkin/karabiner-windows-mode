@@ -108,11 +108,11 @@
       ]
     },
     {
-      "description": "Atl-Tab between windows",
+      "description": "Alt-Tab between windows",
       "manipulators": [
         {
           "from": {
-            "key_code": "Alt",
+            "key_code": "left_alt",
             "modifiers": {"mandatory": ["tab"], "optional": ["any"]}
           },
           "to": [{
