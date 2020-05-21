@@ -87,12 +87,12 @@ Excepted Applications:
 | Input Key | Input Modifier(s) | Output Key | Output Modifier(s) | Notes |
 |-|-|-|-|-|
 | F1 |  | / | Command+Shift |  |
-| F2 |  |   | rename or enter or return| theGalkin
+| F2 |  |   | rename or enter or return | theGalkin
 | F3 |  | G | Command |  |
 | F4 | Alt | Q | Command | Works in Terminal Emulators. |
 | F4 | Ctrl | W | Command | Only applies to Google Chrome. |
-| F12 to Calc | theGalkin
-| Button 3(Middle mouse button)| LookUp a word| theGalkin 
+| F12| | opens Calc |  |   |  |   | theGalkin
+| Button 3(Middle mouse button)| LookUp a word | | theGalkin 
 
 
 ## Credits
