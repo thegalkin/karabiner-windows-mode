@@ -388,6 +388,90 @@
       ]
     },
     {
+      "description": "Hide all windows except the main one",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "q",
+            "modifiers": { "mandatory": ["left_control", "left_alt"], "optional": ["any"] }
+          },
+          "to": [{
+            "key_code": "h",
+            "modifiers": ["command", "left_alt"]
+          }],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyper$",
+                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Take a sized screenshot",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "4",
+            "modifiers": { "mandatory": ["control", "shift"], "optional": ["any"] }
+          },
+          "to": [{
+            "key_code": "4",
+            "modifiers": ["shift", "command"]
+          }],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyper$",
+                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Take a fullscreen screenshot",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "3",
+            "modifiers": { "mandatory": ["control", "shift"], "optional": ["any"] }
+          },
+          "to": [{
+            "key_code": "3",
+            "modifiers": ["shift", "command"]
+          }],
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^co\\.zeit\\.hyper$",
+                "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
+                "^com\\.microsoft\\.rdc\\.macos$"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
       "description": "F5 to reload",
       "manipulators": [
         {
